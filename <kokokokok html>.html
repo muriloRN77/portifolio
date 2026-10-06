@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="MoveFit - roupas esportivas acessíveis para todos">
+
+    <title>MoveFit - Esporte para Todos</title>
+
+
+    <style>
+
+        /* ==============================
+           CONFIGURAÇÕES GERAIS
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #151515;
+            line-height: 1.6;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           ACESSIBILIDADE DO FOCO
+        ============================== */
+
+        :focus-visible {
+            outline: 4px solid #ffd000;
+            outline-offset: 4px;
+        }
+
+
+        /* ==============================
+           CABEÇALHO
+        ============================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: #111;
+            color: white;
+
+            box-shadow: 0 3px 15px rgba(0,0,0,.3);
+        }
+
+        .topbar {
+            max-width: 1200px;
+            margin: auto;
+
+            min-height: 75px;
+
+            padding: 12px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .logo span {
+            color: #39ff88;
+        }
+
+
+        /* MENU */
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #39ff88;
+        }
+
+
+        /* CARRINHO */
+
+        .cart-button {
+            border: none;
+
+            background: #39ff88;
+            color: black;
+
+            padding: 10px 16px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+
+            min-height: 570px;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.9),
+                    rgba(0,0,0,.55),
+                    rgba(0,0,0,.2)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1800&q=85"
+                )
+
+                center / cover;
+        }
+
+        .hero-content {
+
+            max-width: 1200px;
+
+            width: 100%;
+
+            margin: auto;
+
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+
+            max-width: 750px;
+
+            font-size: clamp(45px, 7vw, 80px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+
+            max-width: 650px;
+
+            font-size: 20px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+
+            display: inline-block;
+
+            background: #39ff88;
+            color: #000;
+
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            font-weight: 900;
+        }
+
+
+        /* ==============================
+           SEÇÕES
+        ============================== */
+
+        .section {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 70px 20px;
+        }
+
+        .section h2 {
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+
+            max-width: 700px;
+
+            color: #555;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* ==============================
+           CATEGORIAS
+        ============================== */
+
+        .categories {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .category {
+
+            min-height: 180px;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            color: white;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            background-size: cover;
+
+            background-position: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .category::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,.9)
+                );
+        }
+
+        .category span {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .category:nth-child(1) {
+
+            background-image:
+                url(
+                    "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80"
+                );
+        }
+
+        .category:nth-child(2) {
+
+            background-image:
+                url(
+                    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
+                );
+        }
+
+        .category:nth-child(3) {
+
+            background-image:
+                url(
+                    "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80"
+                );
+        }
+
+        .category:nth-child(4) {
+
+            background-image:
+                url(
+                    "https://images.unsplash.com/photo-1506629905607-d9c297d4e6d5?auto=format&fit=crop&w=900&q=80"
+                );
+        }
+
+
+        /* ==============================
+           PRODUTOS
+        ============================== */
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .product {
+
+            background: white;
+
+            border: 1px solid #ddd;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+        }
+
+        .product-image {
+
+            aspect-ratio: 1;
+
+            overflow: hidden;
+        }
+
+        .product-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .product-info {
+
+            padding: 18px;
+        }
+
+        .product-tag {
+
+            color: #087f3d;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .product h3 {
+
+            margin: 5px 0;
+        }
+
+        .product p {
+
+            color: #555;
+
+            font-size: 14px;
+        }
+
+        .price {
+
+            display: block;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin: 12px 0;
+        }
+
+        .add-cart {
+
+            width: 100%;
+
+            padding: 12px;
+
+            background: #111;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           ACESSIBILIDADE
+        ============================== */
+
+        .accessibility {
+
+            background: #111;
+
+            color: white;
+        }
+
+        .accessibility .section-description {
+            color: #ddd;
+        }
+
+        .accessibility-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .access-card {
+
+            padding: 25px;
+
+            background: #222;
+
+            border: 1px solid #444;
+
+            border-radius: 15px;
+        }
+
+        .access-card .icon {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        .access-card h3 {
+
+            margin-bottom: 10px;
+        }
+
+        .access-card p {
+
+            color: #ddd;
+        }
+
+
+        /* ==============================
+           PAINEL DE ACESSIBILIDADE
+        ============================== */
+
+        .accessibility-menu-button {
+
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 65px;
+            height: 65px;
+
+            z-index: 2000;
+
+            border: 3px solid white;
+
+            border-radius: 50%;
+
+            background: #0757d5;
+
+            color: white;
+
+            font-size: 28px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,.4);
+        }
+
+        .accessibility-panel {
+
+            position: fixed;
+
+            right: 20px;
+            bottom: 100px;
+
+            z-index: 1999;
+
+            width: 350px;
+
+            max-width: calc(100vw - 40px);
+
+            padding: 20px;
+
+            background: white;
+
+            border: 3px solid #0757d5;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,.4);
+
+            display: none;
+        }
+
+        .accessibility-panel.open {
+            display: block;
+        }
+
+        .accessibility-panel h2 {
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        .accessibility-panel button {
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin: 5px 0;
+
+            border: 2px solid #bbb;
+
+            border-radius: 8px;
+
+            background: #f0f0f0;
+
+            text-align: left;
+
+            font-weight: bold;
+        }
+
+        .accessibility-panel button:hover {
+            background: #ddd;
+        }
+
+
+        /* ==============================
+           NEWSLETTER
+        ============================== */
+
+        .newsletter {
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            background: #39ff88;
+        }
+
+        .newsletter h2 {
+            font-size: 32px;
+        }
+
+        .newsletter form {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .newsletter input {
+
+            flex: 1;
+
+            padding: 14px;
+
+            border: 2px solid #111;
+
+            border-radius: 8px;
+        }
+
+        .newsletter button {
+
+            padding: 14px 20px;
+
+            border: none;
+
+            background: #111;
+
+            color: white;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           RODAPÉ
+        ============================== */
+
+        footer {
+
+            background: #050505;
+
+            color: white;
+
+            padding: 50px 20px;
+        }
+
+        .footer-content {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #ddd;
+        }
+
+
+        /* ==============================
+           ALTO CONTRASTE
+        ============================== */
+
+        body.high-contrast {
+
+            background: #000;
+
+            color: white;
+        }
+
+        body.high-contrast .product {
+
+            background: #000;
+
+            color: white;
+
+            border-color: white;
+        }
+
+        body.high-contrast .product p,
+        body.high-contrast .section-description {
+
+            color: white;
+        }
+
+
+        /* ==============================
+           DISLEXIA
+        ============================== */
+
+        body.dyslexia {
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            letter-spacing: .04em;
+
+            word-spacing: .08em;
+
+            line-height: 1.9;
+        }
+
+
+        /* ==============================
+           AUTISMO
+        ============================== */
+
+        body.autism * {
+
+            animation: none !important;
+
+            transition: none !important;
+        }
+
+        body.autism {
+
+            background: #f4f1e8;
+        }
+
+
+        /* ==============================
+           TEXTO GRANDE
+        ============================== */
+
+        body.large-text {
+            font-size: 20px;
+        }
+
+
+        /* ==============================
+           REDUZIR MOVIMENTO
+        ============================== */
+
+        body.reduce-motion * {
+
+            animation: none !important;
+
+            transition: none !important;
+
+            scroll-behavior: auto !important;
+        }
+
+
+        /* ==============================
+           RESPONSIVO
+        ============================== */
+
+        @media(max-width: 950px) {
+
+            .categories,
+            .products,
+            .accessibility-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+        }
+
+
+        @media(max-width: 650px) {
+
+            .topbar {
+
+                flex-wrap: wrap;
+            }
+
+            nav {
+
+                width: 100%;
+
+                order: 3;
+            }
+
+            nav ul {
+
+                justify-content: center;
+
+                flex-wrap: wrap;
+            }
+
+            .categories,
+            .products,
+            .accessibility-grid,
+            .footer-content {
+
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter form {
+
+                flex-direction: column;
+            }
+
+            .newsletter input,
+            .newsletter button {
+
+                width: 100%;
+            }
+        }
+
+    </style>
+
+
+    <!-- =====================================================
+         VLibras
+         
+         IMPORTANTE:
+         Este é o código oficial de integração.
+    ====================================================== -->
+
+    <script
+        src="https://vlibras.gov.br/app/vlibras-plugin.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         MENU
+    ============================== -->
+
+    <header>
+
+        <div class="topbar">
+
+            <a
+                href="#inicio"
+                class="logo"
+                aria-label="MoveFit página inicial"
+            >
+                MOVE<span>FIT</span>
+            </a>
+
+
+            <nav aria-label="Menu principal">
+
+                <ul>
+
+                    <li>
+                        <a href="#inicio">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#categorias">
+                            Categorias
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#produtos">
+                            Produtos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#acessibilidade">
+                            Acessibilidade
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <button
+                class="cart-button"
+                onclick="alert('Carrinho vazio')"
+                aria-label="Abrir carrinho"
+            >
+                🛒 Carrinho
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         BOTÃO DO PAINEL DE ACESSIBILIDADE
+    ====================================================== -->
+
+    <button
+        id="accessibilityButton"
+        class="accessibility-menu-button"
+        onclick="toggleAccessibility()"
+        aria-label="Abrir painel de acessibilidade"
+        aria-expanded="false"
+    >
+        ♿
+    </button>
+
+
+    <!-- =====================================================
+         PAINEL
+    ====================================================== -->
+
+    <aside
+        id="accessibilityPanel"
+        class="accessibility-panel"
+        aria-label="Opções de acessibilidade"
+    >
+
+        <h2>
+            Acessibilidade
+        </h2>
+
+        <p>
+            Escolha os recursos que deseja ativar.
+        </p>
+
+
+        <button onclick="toggleMode('high-contrast')">
+            🌓 Alto contraste
+        </button>
+
+
+        <button onclick="toggleMode('large-text')">
+            🔎 Texto maior
+        </button>
+
+
+        <button onclick="toggleMode('dyslexia')">
+            📖 Modo para dislexia
+        </button>
+
+
+        <button onclick="toggleMode('autism')">
+            🧩 Reduzir estímulos
+        </button>
+
+
+        <button onclick="toggleMode('reduce-motion')">
+            ⏸️ Reduzir animações
+        </button>
+
+
+        <button onclick="readPage()">
+            🔊 Ler página
+        </button>
+
+
+        <button onclick="stopReading()">
+            ⏹️ Parar leitura
+        </button>
+
+
+        <!--
+        NÃO colocamos um botão falso de Libras aqui.
+
+        O próprio VLibras cria seu botão oficial
+        automaticamente na página.
+        -->
+
+        <button onclick="toggleAccessibility()">
+            Fechar
+        </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main id="conteudo">
+
+        <section
+            id="inicio"
+            class="hero"
+        >
+
+            <div class="hero-content">
+
+                <h1>
+                    Movimento para todos.
+                </h1>
+
+                <p>
+                    Roupas esportivas confortáveis,
+                    modernas e inclusivas para diferentes
+                    corpos, estilos e necessidades.
+                </p>
+
+                <a
+                    href="#produtos"
+                    class="hero-button"
+                >
+                    Comprar agora
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORIAS
+        ================================================== -->
+
+        <section
+            id="categorias"
+            class="section"
+        >
+
+            <h2>
+                Encontre seu estilo
+            </h2>
+
+            <p class="section-description">
+                Produtos para academia, corrida,
+                caminhada e treino.
+            </p>
+
+
+            <div class="categories">
+
+                <a
+                    href="#produtos"
+                    class="category"
+                >
+                    <span>
+                        Camisetas
+                    </span>
+                </a>
+
+
+                <a
+                    href="#produtos"
+                    class="category"
+                >
+                    <span>
+                        Tênis
+                    </span>
+                </a>
+
+
+                <a
+                    href="#produtos"
+                    class="category"
+                >
+                    <span>
+                        Treino
+                    </span>
+                </a>
+
+
+                <a
+                    href="#produtos"
+                    class="category"
+                >
+                    <span>
+                        Acessórios
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUTOS
+        ================================================== -->
+
+        <section
+            id="produtos"
+            class="section"
+        >
+
+            <h2>
+                Produtos em destaque
+            </h2>
+
+            <p class="section-description">
+                Escolha suas roupas esportivas.
+            </p>
+
+
+            <div class="products">
+
+
+                <article class="product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+                            alt="Camiseta esportiva preta"
+                        >
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="product-tag">
+                            Esporte
+                        </span>
+
+                        <h3>
+                            Camiseta Motion
+                        </h3>
+
+                        <p>
+                            Tecido leve e confortável.
+                        </p>
+
+                        <strong class="price">
+                            R$ 89,90
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            onclick="adicionarProduto()"
+                        >
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80"
+                            alt="Pessoa correndo"
+                        >
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="product-tag">
+                            Corrida
+                        </span>
+
+                        <h3>
+                            Short Run
+                        </h3>
+
+                        <p>
+                            Flexibilidade para correr.
+                        </p>
+
+                        <strong class="price">
+                            R$ 109,90
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            onclick="adicionarProduto()"
+                        >
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                            alt="Tênis esportivo vermelho"
+                        >
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="product-tag">
+                            Calçados
+                        </span>
+
+                        <h3>
+                            Tênis Sprint
+                        </h3>
+
+                        <p>
+                            Conforto para seus treinos.
+                        </p>
+
+                        <strong class="price">
+                            R$ 249,90
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            onclick="adicionarProduto()"
+                        >
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1506629905607-d9c297d4e6d5?auto=format&fit=crop&w=800&q=80"
+                            alt="Pessoa usando roupa esportiva"
+                        >
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="product-tag">
+                            Treino
+                        </span>
+
+                        <h3>
+                            Legging Flex
+                        </h3>
+
+                        <p>
+                            Elasticidade e conforto.
+                        </p>
+
+                        <strong class="price">
+                            R$ 139,90
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            onclick="adicionarProduto()"
+                        >
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACESSIBILIDADE
+        ================================================== -->
+
+        <section
+            id="acessibilidade"
+            class="accessibility"
+        >
+
+            <div class="section">
+
+                <h2>
+                    Esporte para todos
+                </h2>
+
+                <p class="section-description">
+                    Nossa loja foi pensada para oferecer
+                    uma experiência mais acessível.
+                </p>
+
+
+                <div class="accessibility-grid">
+
+
+                    <article class="access-card">
+
+                        <div class="icon">
+                            👁️
+                        </div>
+
+                        <h3>
+                            Pessoas cegas
+                        </h3>
+
+                        <p>
+                            HTML semântico, textos
+                            alternativos e navegação
+                            compatível com leitores
+                            de tela.
+                        </p>
+
+                    </article>
+
+
+                    <article class="access-card">
+
+                        <div class="icon">
+                            📖
+                        </div>
+
+                        <h3>
+                            Dislexia
+                        </h3>
+
+                        <p>
+                            Espaçamento maior e
+                            tipografia mais confortável.
+                        </p>
+
+                    </article>
+
+
+                    <article class="access-card">
+
+                        <div class="icon">
+                            🧩
+                        </div>
+
+                        <h3>
+                            Autismo
+                        </h3>
+
+                        <p>
+                            Redução de animações e
+                            estímulos visuais.
+                        </p>
+
+                    </article>
+
+
+                    <article class="access-card">
+
+                        <div class="icon">
+                            🤟
+                        </div>
+
+                        <h3>
+                            Libras
+                        </h3>
+
+                        <p>
+                            Tradução automática para
+                            Libras através do VLibras.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NEWSLETTER
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="newsletter">
+
+                <h2>
+                    Faça parte do movimento
+                </h2>
+
+                <p>
+                    Receba novidades da MoveFit.
+                </p>
+
+
+                <form
+                    onsubmit="newsletter(event)"
+                >
+
+                    <label
+                        for="email"
+                        style="
+                            position:absolute;
+                            left:-9999px;
+                        "
+                    >
+                        Seu e-mail
+                    </label>
+
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Seu melhor e-mail"
+                        required
+                    >
+
+
+                    <button type="submit">
+                        Inscrever
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    MOVEFIT
+                </h3>
+
+                <p>
+                    Esporte, conforto e inclusão.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Atendimento
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Fale conosco
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Trocas e devoluções
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Acessibilidade
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="# acessibilidade">
+                            Recursos acessíveis
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         VLibras
+
+         ESTE BLOCO É IMPORTANTE.
+
+         NÃO REMOVA.
+
+         O VLibras cria o botão 🤟 automaticamente.
+    ====================================================== -->
+
+    <div
+        vw
+        class="enabled"
+    >
+
+        <div
+            vw-access-button
+            class="active"
+        >
+        </div>
+
+
+        <div
+            vw-plugin-wrapper
+        >
+
+            <div
+                class="vw-plugin-top-wrapper"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SCRIPT VLibras
+    ====================================================== -->
+
+    <script>
+
+        /*
+         * Inicialização oficial do VLibras.
+         *
+         * O botão do VLibras será criado
+         * automaticamente pelo widget.
+         */
+
+        new window.VLibras.Widget(
+            "https://vlibras.gov.br/app"
+        );
+
+    </script>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DO SITE
+    ====================================================== -->
+
+    <script>
+
+        /* PAINEL DE ACESSIBILIDADE */
+
+        function toggleAccessibility() {
+
+            const panel =
+                document.getElementById(
+                    "accessibilityPanel"
+                );
+
+            const button =
+                document.getElementById(
+                    "accessibilityButton"
+                );
+
+
+            const aberto =
+                panel.classList.toggle("open");
+
+
+            button.setAttribute(
+                "aria-expanded",
+                aberto
+            );
+
+        }
+
+
+        /* MODOS */
+
+        function toggleMode(mode) {
+
+            document.body.classList.toggle(mode);
+
+        }
+
+
+        /* LEITOR DE TELA */
+
+        function readPage() {
+
+            if (
+                !("speechSynthesis" in window)
+            ) {
+
+                alert(
+                    "Seu navegador não possui suporte para leitura."
+                );
+
+                return;
+            }
+
+
+            speechSynthesis.cancel();
+
+
+            const texto =
+                document
+                    . getElementById("conteudo")
+                    . innerText;
+
+
+            const fala =
+                new SpeechSynthesisUtterance(
+                    texto
+                );
+
+
+            fala.lang = "pt-BR";
+
+            fala.rate = .9;
+
+            fala.pitch = 1;
+
+
+            speechSynthesis.speak(
+                fala
+            );
+
+        }
+
+
+        /* PARAR LEITURA */
+
+        function stopReading() {
+
+            if (
+                "speechSynthesis"
+                in window
+            ) {
+
+                speechSynthesis.cancel();
+
+            }
+
+        }
+
+
+        /* CARRINHO */
+
+        let quantidade = 0;
+
+
+        function adicionarProduto() {
+
+            quantidade++;
+
+
+            alert(
+                "Produto adicionado ao carrinho!"
+            );
+
+        }
+
+
+        /* NEWSLETTER */
+
+        function newsletter(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById(
+                    "email"
+                ).value;
+
+
+            alert(
+                "Obrigado! " +
+                email +
+                " foi cadastrado."
+            );
+
+
+            event.target.reset();
+
+        }
+
+
+        /* ESC FECHA PAINEL */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    document
+                        .getElementById(
+                            "accessibilityPanel"
+                        )
+                        .classList
+                        .remove("open");
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
